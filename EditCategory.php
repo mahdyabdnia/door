@@ -7,7 +7,7 @@ Class EditCategory extends CI_Controller{
 
      $data['main_content']='editcategory';
 
-     $this->load->view('editcategory',$data);
+     $this->load->view('layout/main',$data);
         
 
 

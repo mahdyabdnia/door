@@ -7,7 +7,7 @@ class Category extends CI_Controller{
 {
     
 $data['main_content']='category';
-$this->load->view('category',$data);
+$this->load->view('layout/main',$data);
 
 
 }

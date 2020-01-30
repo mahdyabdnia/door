@@ -10,7 +10,7 @@ class First extends CI_Controller
 
         $data['detail']=$this->FirstModel->show();
 		$data['main_content']='first';
-		$this->load->view('first',$data);
+		$this->load->view('layout/main',$data);
 
 
 

@@ -33,6 +33,45 @@ Class EditCategory extends CI_Controller{
     }
 
 
+    public function edit($id){
+
+    	if ($_SERVER['REQUEST_METHOD']=='POST') {
+    		if(isset($_POST['validedit'])){
+
+    			$data = array('category_name' =>trim($_POST['cat-name']) ,'global_category'=>trim($_POST['global-cat']),'branch_category'=>trim($_POST['branch-name']) );
+
+    			if($this->CategoryModel->updateCategory($data,$id)){
+
+    				redirect('./EditCategory');
+
+
+
+    			}
+
+
+
+
+
+    		}
+
+
+    		elseif(isset($_POST['cancel'])){
+    			redirect('./EditCategory');
+
+
+    		}
+    		
+
+
+    	}
+
+
+
+
+
+    }
+
+
     
 
 

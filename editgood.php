@@ -10,11 +10,11 @@
                 
                 <thead>
                     <tr>
-                <th>ردیف</th>
+                
                     <th>کد محصول</th>
                     <th>نام محصول</th>
                     <th>نام برند</th>
-                    <th>خلاصه مشخصات محصول</th>
+                    <th> نام دسته بندی</th>
                     <th>عملیات</th>
                 </tr>
                 </thead>
@@ -49,14 +49,17 @@
                 
                 
                 <tbody>
+
+
+                    <?php foreach ($result as $res) : ?>
                     
                     <tr>
-                <td>1</td>
-                <td>95545</td>  
-                <td>hhdfd</td>  
-                    <td>samsung</td>
-                    <td>دارای دو سیم کارت </td>
-                    <td><a href="#" class="btn btn-info">ویرایش </a>
+               
+                <td><?php echo $res->good_id; ?></td>  
+                <td><?php echo $res->good_name; ?></td>  
+                    <td><?php echo $res->brand_name; ?></td>
+                    <td><?php echo $res->category_name; ?></td>
+                    <td><a href="<?php echo base_url(); ?>EditGood/editPage/<?php echo $res->good_id; ?>" class="btn btn-info">ویرایش </a>
                         <button class="btn del btn-danger">حذف</button>
                         
                         
@@ -88,7 +91,7 @@
                         </td>
                 </tr>
                 
-                
+                <?php endforeach; ?>
                     
              
                 </tbody>

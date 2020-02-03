@@ -17,7 +17,11 @@ Class EditCategory extends CI_Controller{
     }
 
 
-    public function editPage(){
+    public function editPage($id){
+
+    	$data['result']=$this->CategoryModel->showbyId($id);
+
+
 
     	$data['main_content']='editthecat';
     	$this->load->view('layout/main',$data);
@@ -29,11 +33,7 @@ Class EditCategory extends CI_Controller{
     }
 
 
-    public function edit(){
-
-
-    	
-    }
+    
 
 
 

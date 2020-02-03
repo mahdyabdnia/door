@@ -58,7 +58,7 @@
                 <td><?php echo $res->category_name; ?></td>  
                     <td><?php echo $res->global_category; ?></td>
                     <td><?php echo $res->branch_category; ?></td>
-                    <td><a href="<?php echo base_url(); ?>EditCategory/editPage" class="btn btn-info">ویرایش </a>
+                    <td><a href="<?php echo base_url(); ?>EditCategory/editPage/<?php echo $res->category_id; ?>" class="btn btn-info">ویرایش </a>
                         <button class="btn del btn-danger">حذف</button>
                         
                         

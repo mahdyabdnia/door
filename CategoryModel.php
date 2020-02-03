@@ -19,7 +19,7 @@
 
  	public function updateCategory($data,$id){
 
- 		$this->db->where('category-id',$id);
+ 		$this->db->where('category_id',$id);
  		 return $this->db->update('category',$data);
 
 
@@ -32,6 +32,15 @@
 
 
 
+ 	}
+
+ 	public function showbyId($id){
+
+
+
+ 		$this->db->where('category_id',$id);
+
+ 		return $this->db->get('category')->result();
  	}
 
 

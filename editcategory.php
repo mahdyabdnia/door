@@ -10,7 +10,7 @@
                 
                 <thead>
                     <tr>
-                <th>ردیف</th>
+              
                     <th>کد دسته بندی</th>
                     <th>نام دسته بندی</th>
                     <th>دسته بندی کلی</th>
@@ -49,14 +49,16 @@
                 
                 
                 <tbody>
+
+                    <?php  foreach ($result as $res): ?>
                     
                     <tr>
-                <td>1</td>
-                <td>95545</td>  
-                <td>hhdfd</td>  
-                    <td>samsung</td>
-                    <td>دارای دو سیم کارت </td>
-                    <td><a href="#" class="btn btn-info">ویرایش </a>
+                
+                <td><?php echo $res->category_id; ?></td>  
+                <td><?php echo $res->category_name; ?></td>  
+                    <td><?php echo $res->global_category; ?></td>
+                    <td><?php echo $res->branch_category; ?></td>
+                    <td><a href="<?php echo base_url(); ?>EditCategory/editPage" class="btn btn-info">ویرایش </a>
                         <button class="btn del btn-danger">حذف</button>
                         
                         
@@ -65,10 +67,18 @@
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                             <div class="modal-body">
-                                <div>ایا از حذف ان اطمینان دارید؟</div>
+
+                                <form action="" method="post">
+                                    <div>ایا از حذف ان اطمینان دارید؟</div>
                                 <div><button class="btn btn-info yes">بله</button>
                                 <button class="btn btn-info no">خیر</button>
                                 </div>
+                                    
+
+
+
+                                </form>
+                                
                                 
                                 </div>
                             
@@ -87,7 +97,7 @@
                         
                         </td>
                 </tr>
-                
+                <?php endforeach; ?>
                 
                     
              

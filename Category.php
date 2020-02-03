@@ -18,7 +18,7 @@ public function addCategory(){
 		
 
 		if(isset($_POST['add-cat-end'])){
-			$data = array('category_name' => trim($_POST['cat-name']),'global-category'=>trim($_POST['global-cat']),'branch-category'=>trim($_POST['branch-name']) );
+			$data = array('category_name' => trim($_POST['cat-name']),'global_category'=>trim($_POST['global-cat']),'branch_category'=>trim($_POST['branch-name']) );
 
 			if($this->CategoryModel->addCategory($data)){
 
@@ -28,6 +28,28 @@ public function addCategory(){
 
 
 		}
+
+
+
+
+		elseif (isset($_POST['add-cat-next'])) {
+
+			$data = array('category_name' => trim($_POST['cat-name']),'global_category'=>trim($_POST['global-cat']),'branch_category'=>trim($_POST['branch-name']) );
+
+			if($this->CategoryModel->addCategory($data)){
+
+				redirect('./Category');
+			}
+			
+		}
+
+
+		elseif (isset($_POST['cancel'])) {
+			redirect('./First');
+		}
+
+
+
 	}
 
 

@@ -11,11 +11,12 @@
                     <label  for="type" align="right" > دسته بندی</label>
                     <select class="form-control" id="type" dir="rtl">
                     <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
-                        <option>پوشاک</option>
-                        <option>پوشاک</option>
-                        <option>پوشاک</option>
-                        <option>پوشاک</option>
-                        <option>پوشاک</option>
+                       <?php foreach ($cat_result as $cat) : ?>
+
+                        <option><?php echo $cat->category_name; ?></option>
+
+
+                       <?php endforeach; ?>
                     
                     </select>
                 

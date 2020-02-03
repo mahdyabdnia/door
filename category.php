@@ -6,7 +6,7 @@
             </div>
             <hr>
             
-            <form method="post" action="<?php echo base_url();  ?>Category">
+            <form method="post" action="<?php echo base_url(); ?>Category/addCategory">
             
                 <div class="form-group">
                 <label align="right" >نام دسته بندی  </label>

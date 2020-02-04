@@ -42,34 +42,35 @@ Class EditCategory extends CI_Controller{
 
     			if($this->CategoryModel->updateCategory($data,$id)){
 
-    				redirect('./EditCategory');
-
-
-
-    			}
-
-
-
-
-
-    		}
+    				redirect('./EditCategory');}}
 
 
     		elseif(isset($_POST['cancel'])){
-    			redirect('./EditCategory');
-
-
-    		}
-    		
-
-
-    	}
+    			redirect('./EditCategory');}}}
 
 
 
 
+     public function delete($id){
 
-    }
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+
+
+
+            if(isset($_POST['del_yes'])){
+
+                if($this->CategoryModel->deleteCategory($id)){
+
+                    redirect('./EditCategory');
+                }
+
+               
+
+
+
+            }
+        }
+ }           
 
 
     

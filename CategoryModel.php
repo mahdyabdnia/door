@@ -45,6 +45,15 @@
 
 
 
+ 	public function deleteCategory($id){
+
+ 		$this->db->where('category_id',$id);
+
+ 		 return $this->db->delete('category');
+ 	}
+
+
+
 
  }
 

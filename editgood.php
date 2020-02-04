@@ -68,10 +68,15 @@
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                             <div class="modal-body">
+
+
+                                <form method="post" action="<?php echo base_url() ?>EditGood/delete/<?php echo $res->good_id; ?>">
                                 <div>ایا از حذف ان اطمینان دارید؟</div>
-                                <div><button class="btn btn-info yes">بله</button>
+                                <div><button class="btn btn-info yes" name="del_yes">بله</button>
                                 <button class="btn btn-info no">خیر</button>
                                 </div>
+
+                            </form>
                                 
                                 </div>
                             

@@ -68,16 +68,18 @@
                             <div class="modal-content">
                             <div class="modal-body">
 
-                                <form action="" method="post">
+                                <form action="<?php echo base_url(); ?>EditCategory/delete/<?php echo $res->category_id; ?>" method="post">
                                     <div>ایا از حذف ان اطمینان دارید؟</div>
-                                <div><button class="btn btn-info yes">بله</button>
-                                <button class="btn btn-info no">خیر</button>
+                                <div><button class="btn btn-info yes" name="del_yes">بله</button>
+                                
                                 </div>
                                     
 
 
 
                                 </form>
+
+                                <div><button class="btn btn-info no">خیر</button></div>
                                 
                                 
                                 </div>

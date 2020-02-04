@@ -32,6 +32,26 @@ class GoodModel extends CI_model
 	}
 
 
+	public function updateGood($id,$data){
+		$this->db->where('good_id',$id);
+		return $this->db->update('good',$data);
+
+    
+
+
+	}
+
+
+
+	public function deleteGood($id){
+   $this->db->where('good_id',$id);
+
+   return $this->db->delete('good');
+
+
+	}
+
+
 }
 
 

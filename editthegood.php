@@ -28,6 +28,17 @@
                     
                 
                 </div>
+
+
+                <div class="form-group">
+
+                    <label align="right" for="price">قیمت مخصول</label>
+
+                    <input type="text" name="good_price" id="name" class="form-control form-input" value="<?php echo $res->good_price; ?>">
+
+
+
+                 </div>   
                 
                 
                 <div class="form-group">

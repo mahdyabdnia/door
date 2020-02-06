@@ -40,7 +40,7 @@ $this->load->view('layout/main',$data);
 
     		if(isset($_POST['save'])){
 
-    			$data = array('good_name' =>trim($_POST['good_name']) , 'brand_name'=>trim($_POST['brand_name']),'category_name'=>trim($_POST['category_name']),'description'=>trim($_POST['description']) );
+    			$data = array('good_price'=>trim($_POST['good_price']),'good_name' =>trim($_POST['good_name']) , 'brand_name'=>trim($_POST['brand_name']),'category_name'=>trim($_POST['category_name']),'description'=>trim($_POST['description']) );
 
 
     			if($this->GoodModel->updateGood($id,$data)){

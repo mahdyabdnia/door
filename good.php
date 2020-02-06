@@ -28,6 +28,15 @@
                     
                 
                 </div>
+
+
+                <div class="form-group">
+                 <label align="right" for="price">قیمت محصول</label>   
+                   <input type="text" id="price" name="good_price" class="form-control form-input" placeholder="لطفا قیمت محصول راوارد کمید" > 
+
+
+
+                </div>
                 
                 
                 <div class="form-group">

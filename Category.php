@@ -7,6 +7,7 @@ class Category extends CI_Controller{
 {
     
 $data['main_content']='category';
+$data['glo_cat']=$this->CategoryModel->showGloCategory();
 $this->load->view('layout/main',$data);
 
  

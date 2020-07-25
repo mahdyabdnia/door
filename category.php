@@ -111,9 +111,9 @@
                     <select class="form-control" id="type" dir="rtl" name="global-cat-branch">
                     <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
                      
-
-                        <option>لطفا یک دسته بندی را انتخاب نمایید </option>
-
+                         <?php foreach ($glo_cat as $gcat) : ?>
+                        <option><?php echo $gcat->global_category; ?></option>
+                         <?php endforeach; ?>
 
                      
                     
@@ -147,40 +147,42 @@
             <div id="cate_class" class="cate_class">
             <form method="post" action="<?php echo base_url(); ?>Category/addCategory">
             
+              
+                
+                
                 <div class="form-group">
+                    <label  for="type" align="right" > دسته بندی</label>
+                    <select class="form-control" id="type" dir="rtl" name="global-cat">
+                    <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
+                     
+
+                        <option>لطفا یک دسته بندی را انتخاب نمایید </option>
+
+
+                     
+                    
+                    </select>
+                
+                </div>
+                
+                <div class="form-group">
+                    <label  for="type" align="right" > دسته بندی</label>
+                    <select class="form-control" id="type" dir="rtl" name="branch-name">
+                    <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
+                     
+
+                        <option>لطفا یک دسته بندی را انتخاب نمایید </option>
+
+
+                     
+                    
+                    </select>
+                
+                </div>
+
+                  <div class="form-group">
                 <label align="right" >نام دسته بندی  </label>
                     <input  class="form-control form-input" type="text" placeholder="نام دسته بندی جدید را وارد نمایید " name="cat-name"> 
-                
-                </div>
-                
-                
-                <div class="form-group">
-                    <label  for="type" align="right" > دسته بندی</label>
-                    <select class="form-control" id="type" dir="rtl" name="category_name">
-                    <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
-                     
-
-                        <option>لطفا یک دسته بندی را انتخاب نمایید </option>
-
-
-                     
-                    
-                    </select>
-                
-                </div>
-                
-                <div class="form-group">
-                    <label  for="type" align="right" > دسته بندی</label>
-                    <select class="form-control" id="type" dir="rtl" name="category_name">
-                    <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
-                     
-
-                        <option>لطفا یک دسته بندی را انتخاب نمایید </option>
-
-
-                     
-                    
-                    </select>
                 
                 </div>
 

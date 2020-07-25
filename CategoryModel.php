@@ -56,6 +56,10 @@
 
  	}
 
+ 	public function showGloCategory(){
+ 		return $this->db->get('global_category')->result();
+ 	}
+
  	public function showbyId($id){
 
 

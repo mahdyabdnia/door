@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 class Category extends CI_Controller{
 
@@ -9,9 +9,52 @@ class Category extends CI_Controller{
 $data['main_content']='category';
 $this->load->view('layout/main',$data);
 
-
+ 
 }
 
+
+public function addGloCategory(){
+
+
+	if ($_SERVER['REQUEST_METHOD']=="POST") {
+		
+
+		if(isset($_POST['add-glocat-end'])){
+			$data = array('global_category'=>trim($_POST['global-cat-glo']) );
+
+			if($this->CategoryModel->addGloCategory($data)){
+
+				redirect('./First');
+			}
+
+
+
+		}
+
+
+
+
+		elseif (isset($_POST['add-glocat-next'])) {
+
+			$data = array('global_category'=>trim($_POST['global-cat-glo']));
+
+			if($this->CategoryModel->addGloCategory($data)){
+
+				redirect('./Category');
+			}
+			
+		}
+
+
+		elseif (isset($_POST['cancel'])) {
+			redirect('./First');
+		}
+
+
+
+	}
+
+}
 
 public function addCategory(){
 	if ($_SERVER['REQUEST_METHOD']=="POST") {
@@ -55,6 +98,51 @@ public function addCategory(){
 
 
 }
+
+
+public function addBranchCategory(){
+
+if ($_SERVER['REQUEST_METHOD']=="POST") {
+		
+
+		if(isset($_POST['add-brancat-end'])){
+			$data = array('global_category'=>trim($_POST['global-cat-branch']),'branch_category'=>trim($_POST['branch-name-branch']) );
+
+			if($this->CategoryModel->addBranchCategory($data)){
+
+				redirect('./First');
+			}
+
+
+
+		}
+
+
+
+
+		elseif (isset($_POST['add-brancat-next'])) {
+
+			$data = array('global_category'=>trim($_POST['global-cat-branch']),'branch_category'=>trim($_POST['branch-name-branch']) );
+
+			if($this->CategoryModel->addBranchCategory($data)){
+
+				redirect('./Category');
+			}
+			
+		}
+
+
+		elseif (isset($_POST['cancel'])) {
+			redirect('./First');
+		}
+
+
+
+	}
+
+}
+
+
 
 
 

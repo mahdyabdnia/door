@@ -14,6 +14,27 @@ $this->load->view('layout/main',$data);
 }
 
 
+public function fetch_branch(){
+	if($_SERVER['REQUEST_METHOD']=="POST"){
+		if(isset($_POST['global-cat'])){
+			echo $this->CategoryModel->fetch_branch(trim($_POST['global-cat']));
+		}
+	}
+
+}
+
+public function fetch_cate(){
+	if($_SERVER['REQUEST_METHOD']=="POST"){
+		if(isset($_POST['branch-name'])){
+			echo $this->CategoryModel->fetch_branch(trim($_POST['branch-name']));
+		}
+	}
+
+}
+
+
+
+
 public function addGloCategory(){
 
 
@@ -107,6 +128,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 		
 
 		if(isset($_POST['add-brancat-end'])){
+			
 			$data = array('global_category'=>trim($_POST['global-cat-branch']),'branch_category'=>trim($_POST['branch-name-branch']) );
 
 			if($this->CategoryModel->addBranchCategory($data)){

@@ -43,6 +43,9 @@
         </script>
 
 
+        
+
+
 
 
 
@@ -153,10 +156,12 @@
                 <div class="form-group">
                     <label  for="type" align="right" > دسته بندی</label>
                     <select class="form-control" id="type" dir="rtl" name="global-cat">
-                    <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
+                    <option disabled selected hidden="" value="">لطفا یک دسته بندی را انتخاب کنید</option>
                      
 
-                        <option>لطفا یک دسته بندی را انتخاب نمایید </option>
+                       <?php foreach ($glo_cat as $gcat) : ?>
+                        <option value="'.<?php echo $gcat->global_category; ?>.'"><?php echo $gcat->global_category; ?></option>
+                         <?php endforeach; ?>
 
 
                      

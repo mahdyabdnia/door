@@ -43,6 +43,55 @@
         </script>
 
 
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#global_type').change(function(){
+                    window.open("https://www.w3schools.com");
+                    //var global_category_id=$('#global_type').val();
+                   // if(global_category_id!=''){
+                       // $.ajax({
+                           // url:"<?php ?>Category/fetch_branch",
+                           // method:"POST",
+                           //
+                           // data:{global_category_id:global_category_id},
+                            // async:true,
+                            //dataType:'json',
+                            
+                            //success:function(data){
+                              //  var html='';
+                                //var i;
+                                //for(i=0;i<data.length;i++){
+                                  //  html+='<option value='+data[i].branch_category_id+'>'+data[i].brnahc_category+'</option>';
+                                //}
+                                //$('#branch_type').html(html);
+
+
+
+                          //  }
+                        //});
+                    //}
+
+                  //  else{
+                    //    $('#branch_type').html('<option value="">لطفا یک زیر دسته بندی را انتخاب نمایید .</option>');
+                    //}
+
+
+
+
+
+
+
+                });
+
+
+            });
+
+            
+
+
+        </script>
+
+
         
 
 
@@ -115,10 +164,10 @@
                     <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
                      
                          <?php foreach ($glo_cat as $gcat) : ?>
-                        <option><?php echo $gcat->global_category; ?></option>
+                        <option value="<?php echo $gcat->global_category_id; ?>"><?php echo $gcat->global_category; ?></option>
                          <?php endforeach; ?>
 
-                     
+                    
                     
                     </select>
                 
@@ -147,6 +196,9 @@
       
             </div>
 
+
+
+
             <div id="cate_class" class="cate_class">
             <form method="post" action="<?php echo base_url(); ?>Category/addCategory">
             
@@ -155,13 +207,15 @@
                 
                 <div class="form-group">
                     <label  for="type" align="right" > دسته بندی</label>
-                    <select class="form-control" id="type" dir="rtl" name="global-cat">
+                    <select class="form-control" id="global_type" dir="rtl" name="global-cat">
                     <option disabled selected hidden="" value="">لطفا یک دسته بندی را انتخاب کنید</option>
                      
 
                        <?php foreach ($glo_cat as $gcat) : ?>
-                        <option value="'.<?php echo $gcat->global_category; ?>.'"><?php echo $gcat->global_category; ?></option>
+                        <option value="<?php echo $gcat->global_category_id; ?>"><?php echo $gcat->global_category; ?></option>
                          <?php endforeach; ?>
+                        
+                         
 
 
                      
@@ -172,7 +226,7 @@
                 
                 <div class="form-group">
                     <label  for="type" align="right" > دسته بندی</label>
-                    <select class="form-control" id="type" dir="rtl" name="branch-name">
+                    <select class="form-control" id="branch_type" dir="rtl" name="branch-name">
                     <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
                      
 

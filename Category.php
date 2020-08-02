@@ -15,22 +15,12 @@ $this->load->view('layout/main',$data);
 
 
 public function fetch_branch(){
-	if($_SERVER['REQUEST_METHOD']=="POST"){
-		if(isset($_POST['global-cat'])){
-			echo $this->CategoryModel->fetch_branch(trim($_POST['global-cat']));
-		}
-	}
-
+	$global_category_id=$this->input->post('global_category_id',TRUE);
+	$data=$this->CategoryModel->fetch_branch($global_category_id);
+	json_encode($data);
 }
 
-public function fetch_cate(){
-	if($_SERVER['REQUEST_METHOD']=="POST"){
-		if(isset($_POST['branch-name'])){
-			echo $this->CategoryModel->fetch_branch(trim($_POST['branch-name']));
-		}
-	}
 
-}
 
 
 
@@ -129,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 
 		if(isset($_POST['add-brancat-end'])){
 			
-			$data = array('global_category'=>trim($_POST['global-cat-branch']),'branch_category'=>trim($_POST['branch-name-branch']) );
+			$data = array('global_category_id'=>trim($_POST['global-cat-branch']),'branch_category'=>trim($_POST['branch-name-branch']) );
 
 			if($this->CategoryModel->addBranchCategory($data)){
 
@@ -145,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 
 		elseif (isset($_POST['add-brancat-next'])) {
 
-			$data = array('global_category'=>trim($_POST['global-cat-branch']),'branch_category'=>trim($_POST['branch-name-branch']) );
+			$data = array('global_category_id'=>trim($_POST['global-cat-branch']),'branch_category'=>trim($_POST['branch-name-branch']) );
 
 			if($this->CategoryModel->addBranchCategory($data)){
 

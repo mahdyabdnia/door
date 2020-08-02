@@ -15,21 +15,15 @@
 
  	}
 
- 	public function fetch_branch($global_category){
- 		$this->db->where('global_category',$global_category);
+ 	public function fetch_branch($global_category_id){
+ 		$this->db->where('global_category_id',$global_category_id);
  		$query=$this->db->get('branch_category');
- 		$output='<option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>'
- 		foreach ($output->result() as $row) {
- 			$output=.'<option value="'.$row->branch_category.'">'.$row->branch_category;'</option>';
- 		}
- 		return $output;
+ 		
+ 		
+ 		return $query->result();
  	}
 
- 	public function fethc_cate($branch_name){
- 		$this->db->where('branch_name',$branch_name);
- 		$query=$this->db->get('category');
- 		$output=
- 	}
+ 	
 
  	
 

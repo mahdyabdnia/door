@@ -18,7 +18,7 @@
 
  	public function showGlobalCategoryById($id){
  		$this->db->where('global_category_id',$id);
- 		return $this->db->get('global_category')->row();
+ 		return $this->db->get('global_category')->result();
  	}
 
 
@@ -28,7 +28,7 @@
      $this->db->where('category_id',$id);
      $this->db->join('branch_category','category.branch_category_id=branch_category.branch_category_id');
      $this->db->join('global_category','category.global_category_id=global_category.global_category_id');
-     return $this->db->get()->row();
+     return $this->db->get()->result();
 
 
  	}
@@ -38,7 +38,7 @@
  		$this->db->from('branch_category');
  		$this->db->where('branch_category_id',$id);
  		$this->db->join('global_category','branch_category.global_category_id=global_category.global_category_id');
- 		return $this->db->get()->row();
+ 		return $this->db->get()->result();
  	}
 
 
@@ -103,7 +103,7 @@
  	}
 
 
- 	public function updateGloCategory($data,$id){
+ 	public function updateGlobalCategory($data,$id){
  		$this->db->where('global_category_id',$id);
  		return $this->db->update('global_category',$data);
  	}
@@ -155,5 +155,5 @@
 
 
 
-
+   
 ?>

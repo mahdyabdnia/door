@@ -1,12 +1,14 @@
 <?php
 
-
+ 
 Class EditCategory extends CI_Controller{
 
     public function index(){
 
 
     $data['result']=$this->CategoryModel->showCategory();	
+    $data['global_result']=$this->CategoryModel->showGlobalCategory();
+    $data['branch_result']=$this->CategoryModel->showBranchCategory();
 
      $data['main_content']='editcategory';
 

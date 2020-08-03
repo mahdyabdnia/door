@@ -1,6 +1,6 @@
 <?php  
  
- /** 
+ /**  
   */
  class CategoryModel extends CI_model
  {
@@ -12,6 +12,32 @@
 
 
 
+
+ 	}
+
+ 	public function showCategory(){
+
+      $this->db->select('*');
+      $this->db->from('category');
+      $this->db->join('branch_category','category.branch_category_id=branch_category.branch_category_id');
+      $this->db->join('global_category','category.global_category_id=global_category.global_category_id');
+      return $this->db->get()->result();
+
+
+
+ 	}
+
+
+
+ 	public function showGlobalCategory(){
+ 		 return $this->db->get('global_category')->result();
+ 	}
+
+ 	public function showBranchCategory(){
+ 		$this->db->select('*');
+ 		$this->db->from('branch_category');
+ 		$this->db->join('global_category','branch_category.global_category_id=global_category.global_category_id');
+ 		return $this->db->get()->result();
 
  	}
 
@@ -60,13 +86,7 @@
  		return $this->db->update('branch_category',$data);
  	}
 
- 	public function showCategory(){
-
-       return $this->db->get('category')->result();
-
-
-
- 	}
+ 	
 
  	public function showGloCategory(){
  		return $this->db->get('global_category')->result();

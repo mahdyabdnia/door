@@ -71,8 +71,8 @@
                 
                 <script>
                 $(document).ready(function(){
-                    $(".table-div table tbody tr td .del").click(function(){
-                       $("#del-modal").stop(true).show();
+                    $(".table-div table tbody tr td .delglo").click(function(){
+                       $("#delglo-modal").stop(true).show();
                         
                     });
                     
@@ -84,8 +84,8 @@
                 
                 <script>
                 $(document).ready(function(){
-                    $(".no").click(function(){
-                        $("#del-modal").fadeOut();
+                    $(".glono").click(function(){
+                        $("#delglo-modal").fadeOut();
                     });
                     
                 });
@@ -107,19 +107,19 @@
             
                     <td><?php echo $glores->global_category; ?></td>
                     
-                    <td><a href="<?php echo base_url(); ?>EditCategory/editPage/<?php echo $res->category_id; ?>" class="btn btn-info">ویرایش </a>
-                        <button class="btn del btn-danger">حذف</button>
+                    <td><a href="<?php echo base_url(); ?>EditCategory/editGlobalPage/<?php echo $glores->global_category_id; ?>" class="btn btn-info">ویرایش </a>
+                        <button class="btn delglo btn-danger">حذف</button>
                         
                         
                         
-                        <div class="modal" id="del-modal"  role="dialog">
+                        <div class="modal" id="delglo-modal"  role="dialog">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                             <div class="modal-body">
 
-                                <form action="<?php echo base_url(); ?>EditCategory/delete/<?php echo $res->category_id; ?>" method="post">
+                                <form action="<?php echo base_url(); ?>EditCategory/delete/<?php echo $glores->global_category_id; ?>" method="post">
                                     <div>ایا از حذف ان اطمینان دارید؟</div>
-                                <div><button class="btn btn-info yes" name="del_yes">بله</button>
+                                <div><button class="btn btn-info gloyes" name="delglo_yes">بله</button>
                                 
                                 </div>
                                     
@@ -128,7 +128,7 @@
 
                                 </form>
 
-                                <div><button class="btn btn-info no">خیر</button></div>
+                                <div><button class="btn btn-info glono">خیر</button></div>
                                 
                                 
                                 </div>
@@ -177,8 +177,8 @@
                 
                 <script>
                 $(document).ready(function(){
-                    $(".table-div table tbody tr td .del").click(function(){
-                       $("#del-modal").stop(true).show();
+                    $(".table-div table tbody tr td .delbran").click(function(){
+                       $("#delbran-modal").stop(true).show();
                         
                     });
                     
@@ -190,8 +190,8 @@
                 
                 <script>
                 $(document).ready(function(){
-                    $(".no").click(function(){
-                        $("#del-modal").fadeOut();
+                    $(".branno").click(function(){
+                        $("#delbran-modal").fadeOut();
                     });
                     
                 });
@@ -213,19 +213,19 @@
                 <td><?php echo $branres->branch_category; ?></td>
                     <td><?php echo $branres->global_category; ?></td>
                     
-                    <td><a href="<?php echo base_url(); ?>EditCategory/editPage/<?php echo $res->category_id; ?>" class="btn btn-info">ویرایش </a>
-                        <button class="btn del btn-danger">حذف</button>
+                    <td><a href="<?php echo base_url(); ?>EditCategory/editBranchPage/<?php echo $branres->branch_category_id; ?>" class="btn btn-info">ویرایش </a>
+                        <button class="btn delbran btn-danger">حذف</button>
                         
                         
                         
-                        <div class="modal" id="del-modal"  role="dialog">
+                        <div class="modal" id="delbran-modal"  role="dialog">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                             <div class="modal-body">
 
-                                <form action="<?php echo base_url(); ?>EditCategory/delete/<?php echo $res->category_id; ?>" method="post">
+                                <form action="<?php echo base_url(); ?>EditCategory/delete/<?php echo $branres->branch_category_id; ?>" method="post">
                                     <div>ایا از حذف ان اطمینان دارید؟</div>
-                                <div><button class="btn btn-info yes" name="del_yes">بله</button>
+                                <div><button class="btn btn-info yes" name="delbran_yes">بله</button>
                                 
                                 </div>
                                     
@@ -234,7 +234,7 @@
 
                                 </form>
 
-                                <div><button class="btn btn-info no">خیر</button></div>
+                                <div><button class="btn btn-info branno">خیر</button></div>
                                 
                                 
                                 </div>

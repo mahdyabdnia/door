@@ -35,6 +35,22 @@ Class EditCategory extends CI_Controller{
     }
 
 
+    public function editGlobalPage($id){
+        $data['global_result']=$this->CategoryModel->showGlobalCategoryById($id);
+        $data['main_content']='editglobalcategory';
+        $this->load->view('layout/main',$data);
+
+
+            }
+
+
+    public function editBranchPage($id){
+        $data['branch_result']=$this->CategoryModel->showBranchCategoryById($id);
+        $data['main_content']='editbranchcategory';
+        $this->load->view('layout/main',$data);
+    }        
+
+
     public function edit($id){
 
     	if ($_SERVER['REQUEST_METHOD']=='POST') {
@@ -72,7 +88,32 @@ Class EditCategory extends CI_Controller{
 
             }
         }
- }           
+ }   
+
+
+
+ public function deleteGloblaCategory($id){
+
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+
+        if(isset($_POST['delglo_yes'])){
+            if($this->CategoryModel->deleteGloblaCategory($id)){
+                redirect('./EditCategory');
+            }
+        }
+    }
+ }  
+
+
+ public function deleteBranchCategory($id){
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+        if(isset($_POST['del_yes'])){
+            if($this->CategoryModel->deleteBranchCategory($id)){
+                redirect('./EditCategory');
+            }
+        }
+    }
+ }      
 
 
     

@@ -59,7 +59,7 @@
                 
                 <div class="form-group btn-gr">
                    <button class="  btn btn-info" name="save_end">ثبت و اتمام </button>
-                   <button class="btn btn-dark">ثبت ، کالای بعدی</button>
+                   <button class="btn btn-dark" name="save_next">ثبت ، کالای بعدی</button>
                    <button class="btn btn-primary">انصراف</button>
                 </div>
                 

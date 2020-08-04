@@ -61,6 +61,16 @@
  		 return $this->db->get('global_category')->result();
  	}
 
+
+  
+
+  public function fetchGlobalId($id){
+    $this->db->select('global_category_id');
+    $this->db->from('branch_category');
+    $this->db->where('branch_category_id',$id);
+    return $this->db->get()->result();
+  }
+
  	public function showBranchCategory(){
  		$this->db->select('*');
  		$this->db->from('branch_category');

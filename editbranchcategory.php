@@ -10,19 +10,19 @@
             
             
             
-            <?php foreach ($global_result as $glores):?>
+            <?php foreach ($branch_result as $br):?>
             
-            <form method="post" action="<?php echo base_url(); ?>EditCategory/editGlobalCategory/<?php echo $glores->global_category_id; ?>">
+            <form method="post" action="<?php echo base_url(); ?>EditCategory/editBranchCategory/<?php echo $br->branch_category_id; ?>">
             
                
                 
                 <div class="form-group">
                     <label  for="type" align="right" > دسته بندی</label>
                     <select class="form-control" id="type" dir="rtl" name="global-cat-branch">
-                    <?php foreach ($branch_result as $br) :?>	  
-                    <option disabled selected value="<?php $br->global_category_id; ?>" ><?php echo $br->global_category; ?> </option>
-                    <?php endforeach; ?> 
-                         <?php foreach ($glo_cat as $gcat) : ?>
+                    	  
+                    <option  selected value="<?php $br->global_category_id; ?>" ><?php echo $br->global_category; ?> </option>
+                     
+                         <?php foreach ($global_result as $gcat) : ?>
                         <option value="<?php echo $gcat->global_category_id; ?>"><?php echo $gcat->global_category; ?></option>
                          <?php endforeach; ?>
 
@@ -35,9 +35,9 @@
                 
                 <div class="form-group">
                 <label align="right">نام شاخه بندی</label>
-                <?php foreach($branch_result as $br): ?>
+               
                 <input class="form-control form-input" type="text" placeholder="لطفا نام شاخه بندی را وارد نمایید " name="branch-name-branch" value="<?php echo $br->branch_category; ?>"> 
-            <?php endforeach; ?>
+          
                 </div>
                 
                 

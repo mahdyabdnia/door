@@ -6,7 +6,9 @@
                   $('#branch_class').fadeIn();
                   $('#cate_class').fadeOut();
                   $('#glo_class').fadeOut();
-                  
+                  $('#bran').css('background-color','#9bdfe0');
+                   $('#glo').css('background-color','white');
+                  $('#cate').css('background-color','white');
                 });
 
             });
@@ -20,6 +22,9 @@
                   $('#branch_class').fadeOut();
                   $('#cate_class').fadeOut();
                   $('#glo_class').fadeIn();
+                  $('#bran').css('background-color','white');
+                   $('#glo').css('background-color','#9bdfe0');
+                  $('#cate').css('background-color','white');
                   
                 });
 
@@ -34,6 +39,9 @@
                   $('#branch_class').fadeOut();
                   $('#cate_class').fadeIn();
                   $('#glo_class').fadeOut();
+                $('#bran').css('background-color','white');
+                   $('#glo').css('background-color','white');
+                  $('#cate').css('background-color','#9bdfe0');
                   
                 });
 
@@ -47,23 +55,23 @@
             $(document).ready(function(){
                 $('#global_type').change(function(){
                     window.open("https://www.w3schools.com");
-                    //var global_category_id=$('#global_type').val();
-                   // if(global_category_id!=''){
-                       // $.ajax({
-                           // url:"<?php ?>Category/fetch_branch",
-                           // method:"POST",
-                           //
-                           // data:{global_category_id:global_category_id},
-                            // async:true,
-                            //dataType:'json',
+                    var global_category_id=$('#global_type').val();
+                    if(global_category_id!=''){
+                        $.ajax({
+                            url:"<?php ?>Category/fetch_branch",
+                            method:"POST",
+                           
+                            data:{global_category_id:global_category_id},
+                             async:true,
+                            dataType:'json',
                             
-                            //success:function(data){
-                              //  var html='';
-                                //var i;
-                                //for(i=0;i<data.length;i++){
-                                  //  html+='<option value='+data[i].branch_category_id+'>'+data[i].brnahc_category+'</option>';
-                                //}
-                                //$('#branch_type').html(html);
+                            success:function(data){
+                                var html='';
+                                var i;
+                                for(i=0;i<data.length;i++){
+                                    html+='<option value='+data[i].branch_category_id+'>'+data[i].brnahc_category+'</option>';
+                                }
+                                $('#branch_type').html(html);
 
 
 
@@ -112,9 +120,9 @@
 
         <div class="main2">
             <div  class="tab tabical">
-            <button class="btn btn-default" id="glo">افزودن دسته بندی کلی </button>
-            <button class="btn btn-default" id="bran">افزودن زیر شاخه </button>
-            <button class="btn btn-default" id="cate">افزودن دسته بندی</button>
+            <button class="btn btn-default bt-menu" id="glo">افزودن دسته بندی کلی </button>
+            <button class="btn btn-default bt-menu" id="bran">افزودن زیر شاخه </button>
+            <button class="btn btn-default bt-menu" id="cate">افزودن دسته بندی</button>
             
             </div>
             <hr>

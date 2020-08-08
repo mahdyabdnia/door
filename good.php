@@ -1,3 +1,40 @@
+        <script type="text/javascript">
+         $(document).ready(function (){
+            $('#global_type').change(function(){
+                var global_category_id=$(this).val();
+
+                $.ajax({
+                   url:"<?php echo base_url(); ?>Good/fetch_branch",
+                   async:'true',
+                   method:"POST",
+                   data:{global_category_id,global_category_id},
+                   success:function(data){
+                    var html='';
+
+                   }
+
+                   
+
+
+
+
+                });
+
+
+            });
+         });
+
+            
+
+        </script>
+ 
+
+
+
+
+
+
+
 
         <div class="main2">
             <div  class="header">
@@ -8,12 +45,12 @@
             
             <form  method="post" action="<?php echo base_url(); ?>Good/addGood ">
                 <div class="form-group">
-                    <label  for="type" align="right" > دسته بندی</label>
-                    <select class="form-control" id="type" dir="rtl" name="category_name">
+                    <label  for="type" align="right" >دسته بندی کلی</label>
+                    <select class="form-control" id="global_type" dir="rtl" name="category_name">
                     <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
-                       <?php foreach ($cat_result as $cat) : ?>
+                       <?php foreach ($global_result as $gbr) : ?>
 
-                        <option><?php echo $cat->category_name; ?></option>
+                        <option><?php echo $gbr->global_category; ?></option>
 
 
                        <?php endforeach; ?>
@@ -21,6 +58,39 @@
                     </select>
                 
                 </div>
+
+                <div class="form-group">
+                    <label  for="type" align="right" > دسته بندی</label>
+                    <select class="form-control" id="branch_type" dir="rtl" name="category_name">
+                    <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
+                       
+
+                        <option>1</option>
+
+
+                       
+                    
+                    </select>
+                
+                </div>
+
+                <div class="form-group">
+                    <label  for="type" align="right" > دسته بندی</label>
+                    <select class="form-control" id="category_type" dir="rtl" name="category_name">
+                    <option disabled selected hidden="">لطفا یک دسته بندی را انتخاب کنید</option>
+                    
+
+                        <option>1</option>
+
+
+                   
+                    
+                    </select>
+                
+                </div>
+
+
+
                 
                 <div class="form-group">
                 <label align="right" for="name"> نام محصول </label>

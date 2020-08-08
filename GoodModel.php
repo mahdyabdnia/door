@@ -2,7 +2,7 @@
 
 
 
-
+  
 /**
  * 
  */
@@ -15,6 +15,21 @@ class GoodModel extends CI_model
 		return $this->db->insert('good',$data);
 	}
 
+
+	public function showGlobalCategory(){
+		return $this->db->get('global_category')->result();
+	}
+
+
+	public function showBranchByGlobalCategoryId($global_category_id){
+		$this->db->where('global_category_id',$global_category_id);
+		return $this->db->get('branch_category')->result();
+	}
+
+	public function showCategoryByBranchCategoryId($branch_category_id){
+		$this->db->where('branch_category_id',$branch_category_id);
+		return $this->db->get('category')->result();
+	}
 
 
 	public function showGood(){

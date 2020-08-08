@@ -1,4 +1,4 @@
-
+ 
 
 <?php
 
@@ -9,7 +9,7 @@ class Good extends CI_Controller{
 
 
 
-		$data['cat_result']=$this->CategoryModel->showCategory();
+		$data['global_result']=$this->GoodModel->showGlobalCategory();
 
 		$data['main_content']='good';
 		$this->load->view('layout/main',$data);
@@ -18,6 +18,20 @@ class Good extends CI_Controller{
 
 
 	}
+
+
+      public fetch_branch(){
+            $global_category_id=$this->input->post('global_category_id',TRUE);
+            $data=$this->GoodModel->showBranchByGlobalCategoryId($global_category_id);
+            echo json_encode($data);
+      }
+
+
+      public fetch_category(){
+            $branch_category_id=$this->input->post('branch_category_id',TRUE);
+            $data=$this->GoodModel->showCategoryByBranchCategoryId($branch_category_id);
+            echo json_encode($data);
+      }
 
 
 

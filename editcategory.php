@@ -4,6 +4,10 @@
                   $('#branch_class').fadeIn();
                   $('#cate_class').fadeOut();
                   $('#glo_class').fadeOut();
+
+                  $('#bran').css('background-color','#9bdfe0');
+                   $('#glo').css('background-color','white');
+                  $('#cate').css('background-color','white');
                   
                 });
 
@@ -18,6 +22,10 @@
                   $('#branch_class').fadeOut();
                   $('#cate_class').fadeOut();
                   $('#glo_class').fadeIn();
+
+                  $('#bran').css('background-color','white');
+                   $('#glo').css('background-color','#9bdfe0');
+                  $('#cate').css('background-color','white');
                   
                 });
 
@@ -32,6 +40,10 @@
                   $('#branch_class').fadeOut();
                   $('#cate_class').fadeIn();
                   $('#glo_class').fadeOut();
+
+                   $('#bran').css('background-color','white');
+                   $('#glo').css('background-color','white');
+                  $('#cate').css('background-color','#9bdfe0');
                   
                 });
 

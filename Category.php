@@ -8,6 +8,7 @@ class Category extends CI_Controller{
     
 $data['main_content']='category';
 $data['glo_cat']=$this->CategoryModel->showGloCategory();
+$data['global_result']=$this->CategoryModel->showGlobalCategory();
 $this->load->view('layout/main',$data);
 
  
@@ -16,8 +17,8 @@ $this->load->view('layout/main',$data);
 
 public function fetch_branch(){
 	$global_category_id=$this->input->post('global_category_id',TRUE);
-	$data=$this->CategoryModel->fetch_branch($global_category_id);
-	json_encode($data);
+	$data=$this->CategoryModel->showBracnchByGlobalCategoryId($global_category_id)->result();
+	echo json_encode($data);
 }
 
 
@@ -73,7 +74,7 @@ public function addCategory(){
 		
 
 		if(isset($_POST['add-cat-end'])){
-			$data = array('category_name' => trim($_POST['cat-name']),'global_category'=>trim($_POST['global-cat']),'branch_category'=>trim($_POST['branch-name']) );
+			$data = array('category_name' => trim($_POST['cat-name']),'global_category_id'=>trim($_POST['global-cat']),'branch_category_id'=>trim($_POST['branch-name']) );
 
 			if($this->CategoryModel->addCategory($data)){
 
@@ -89,7 +90,7 @@ public function addCategory(){
 
 		elseif (isset($_POST['add-cat-next'])) {
 
-			$data = array('category_name' => trim($_POST['cat-name']),'global_category'=>trim($_POST['global-cat']),'branch_category'=>trim($_POST['branch-name']) );
+			$data = array('category_name' => trim($_POST['cat-name']),'global_category_id'=>trim($_POST['global-cat']),'branch_category_id'=>trim($_POST['branch-name']) );
 
 			if($this->CategoryModel->addCategory($data)){
 

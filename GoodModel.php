@@ -1,10 +1,10 @@
 <?php 
 
 
-
+ 
   
 /**
- * 
+ *   
  */
 class GoodModel extends CI_model
 {
@@ -22,8 +22,7 @@ class GoodModel extends CI_model
 
 
 	public function showBranchByGlobalCategoryId($global_category_id){
-		$this->db->where('global_category_id',$global_category_id);
-		return $this->db->get('branch_category')->result();
+		return $this->db->get_where('branch_category',array('global_category_id'=>$global_category_id));
 	}
 
 	public function showCategoryByBranchCategoryId($branch_category_id){

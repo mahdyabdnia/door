@@ -47,7 +47,7 @@
 
             });
 
-
+  
         </script>
 
 
@@ -73,18 +73,13 @@
                                 }
                                 $('#branch_type').html(html);
 
-
-
                             }
                         });
                      return false;
                   
  });
+  });
 
-
-            });
-
-            
 
 
         </script>

@@ -1,7 +1,7 @@
 <?php
 
 Class EditGood extends CI_Controller{
-
+   
 
 
 
@@ -21,9 +21,10 @@ $this->load->view('layout/main',$data);
 
 
     public function editPage($id){
-    	$data['cat_result']=$this->CategoryModel->showCategory();
+        $data['global_result']=$this->GoodModel->showGlobalCategory();
+    
 
-        $data['result']=$this->GoodModel->showbyId($id);
+        $data['result']=$this->GoodModel->showGoodById($id);
 
         $data['main_content']='editthegood';
 
@@ -40,7 +41,7 @@ $this->load->view('layout/main',$data);
 
     		if(isset($_POST['save'])){
 
-    			$data = array('good_price'=>trim($_POST['good_price']),'good_name' =>trim($_POST['good_name']) , 'brand_name'=>trim($_POST['brand_name']),'category_name'=>trim($_POST['category_name']),'description'=>trim($_POST['description']) );
+    			$data = array('global_category_id'=>trim($_POST['global_category_id']),'branch_category_id'=>trim($_POST['branch_category_id']),'category_id'=>trim($_POST['category_id']),'good_price'=>trim($_POST['good_price']),'good_name' =>trim($_POST['good_name']) , 'brand_name'=>trim($_POST['brand_name']),'description'=>trim($_POST['description']),'seller_name'=>trim($_POST['seller_name']), );
 
 
     			if($this->GoodModel->updateGood($id,$data)){

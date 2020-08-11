@@ -1,4 +1,4 @@
-
+   
         <div class="main2">
             <div  class="header">
             <h6>ویرایش محصولات</h6>
@@ -49,7 +49,7 @@
                 
                 
                 <tbody>
-
+ 
 
                     <?php foreach ($result as $res) : ?>
                     

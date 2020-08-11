@@ -15,7 +15,7 @@ class Good extends CI_Controller{
 		$this->load->view('layout/main',$data);
 
 
-
+ 
 
 	} 
    
@@ -56,7 +56,7 @@ class Good extends CI_Controller{
             }
 
             elseif(isset($_POST['save_next'])){
-            	if($this->upload()){
+            	
                         
                         $data=array('global_category_id'=>trim($_POST['global_category_id']),'branch_category_id'=>trim($_POST['branch_category_id']),'category_id'=>trim($_POST['category_id']),'good_name'=>trim($_POST['good_name']),'brand_name'=>trim($_POST['brand_name']),'good_price'=>trim($_POST['good_price']),'description'=>$_POST['desc'],'seller_name'=>trim($_POST['seller_name']));
 
@@ -64,7 +64,7 @@ class Good extends CI_Controller{
                         if($this->GoodModel->addGood($data)){
                               redirect('Good');
                         }
-                  }
+                 
 
 
 

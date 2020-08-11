@@ -2,7 +2,7 @@
 
 
  
-  
+      
 /**
  *   
  */
@@ -20,7 +20,7 @@ class GoodModel extends CI_model
 		return $this->db->get('global_category')->result();
 	}
 
-
+ 
 	public function showBranchByGlobalCategoryId($global_category_id){
 		return $this->db->get_where('branch_category',array('global_category_id'=>$global_category_id));
 	}
@@ -33,8 +33,26 @@ class GoodModel extends CI_model
 
 	public function showGood(){
 
-      return $this->db->get('good')->result();
+     $this->db->select('*');
+     $this->db->from('good');
+     $this->db->join('global_category','good.global_category_id=global_category.global_category_id');
+     $this->db->join('branch_category','good.branch_category_id=branch_category.branch_category_id');
+     $this->db->join('category','good.category_id=category.category_id');
+     return $this->db->get()->result();
 
+	}
+
+
+
+	public function showGoodById($id){
+		$this->db->select('*');
+		$this->db->from('good');
+		$this->db->where('good_id',$id);
+		$this->db->join('global_category','good.global_category_id=global_category.global_category_id');
+		$this->db->join('branch_category','good.branch_category_id=branch_category.branch_category_id');
+		$this->db->join('category','good.category_id=category.category_id');
+
+		return $this->db->get()->result();
 	}
 
 

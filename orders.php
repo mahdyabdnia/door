@@ -50,35 +50,32 @@
                 
                 
              <tbody>
+                <?php foreach($orders as $order): ?>
                 <tr>
                  <td>1</td>
-                    <td>تاتت</td>
-                    <td>5454</td>
-                    <td>5</td>
-                    <td>mag</td>
+                    <td><?php echo $order->good_name; ?></td>
+                    <td><?php echo $order->good_id; ?></td>
+                    <td><?php echo $order->order_num; ?></td>
+                    <td><?php echo $order->username; ?></td>
                     <td class="opt">
                     <button class="btn btn-info">
-                        مشاهده کامل  و کنترل  سفارش
-                        
-                        </button>
-                        
-                       
-                    
-                    
-                    </td>
+                        <a href="<?php echo base_url(); ?>Orders/orderPage/<?php echo $order->order_id;  ?>" style="text-decoration: none;color: white;">مشاهده کامل  و کنترل  سفارش    </a>
+                     </button>
+                        </td>
+                  </tr>
                  
-                 
-                 
-                 </tr>
-                 
-                 
-                 <tr></tr>
+                 <?php endforeach; ?>
+                
                 
                 
                 
                 
                 
                 </tbody>
+
+
+
+
             
             </table>
             
@@ -86,7 +83,7 @@
             </div>
             
             <div class="btn-gr">
-            <button class="btn btn-success">بازشگت </button>
+            <?php echo $links; ?>
           
             
             </div>

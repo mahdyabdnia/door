@@ -33,6 +33,14 @@ public function orderPage($order_id){
 }
 
 
+public function deleteOrder(){
+	$order_id=$_POST['order_id'];
+	if($this->OrdersModel->deleteOrder($order_id)){
+		$_SSESSION['success_delete']="با موفقیت حذف شد" ;
+	}
+}
+
+
 
 
 

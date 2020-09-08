@@ -85,9 +85,9 @@
             </table>
 
             <div >
-            	<button class="btn btn-success" style="margin:auto;margin-left:500px; " > ارسال بسته </button>
-            	<button class="btn btn-info">بازگشت به صفحه قبل</button>
-            	<button class="btn btn-danger" style="margin: auto;">کنسل کردن  سفارش </button>
+            	<button class="btn btn-success send" style="margin:auto;margin-left:500px; " > ارسال بسته </button>
+            	<button onclick="goBack()" class="btn btn-info back" >بازگشت به صفحه قبل</button>
+            	<button class="btn btn-danger delete" style="margin: auto;"  data-orderid="<?php echo $ord->order_id; ?>">کنسل کردن  سفارش </button>
             </div>	
 
 
@@ -95,3 +95,36 @@
 
 <?php endforeach; ?>
 </div>
+
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+     $('.delete').click(function(){
+       var order_id=$(this).data("orderid");
+       $.ajax({
+         url:"<?php echo base_url(); ?>Orders/deleteOrder",
+         data:{order_id:order_id},
+         method:"post",
+         success:function(data){
+         	window.history.back();
+         }
+         
+
+
+
+
+       });
+     });
+	});
+
+
+</script>

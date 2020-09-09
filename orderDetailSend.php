@@ -73,7 +73,23 @@
 
              <tr>
              	<th>وضعیت سفارش</th>
-             	<td>عدم ارسال</td>
+             	<?php $state=$ord->order_state; ?>
+             	<?php if($state=="sending"): ?>
+                  <td>
+                  	در حال ارسال 
+             	</td>
+             	<?php elseif($state=="sended"): ?>
+             	 <td>
+             	 	تحویل داده شده است 
+
+             	 </td>	
+
+             	<?php endif; ?>
+
+
+
+
+             	
 
 
              </tr>
@@ -85,9 +101,9 @@
             </table>
 
             <div >
-            	<button class="btn btn-success send" style="margin:auto;margin-left:500px; " data-orderid="<?php echo $ord->order_id; ?>"> ارسال بسته </button>
+            	<button class="btn btn-success send" style="margin:auto;margin-left:500px; " data-orderid="<?php echo $ord->order_id; ?>">ارسال و تحویل موفق</button>
             	<button onclick="goBack()" class="btn btn-info back" >بازگشت به صفحه قبل</button>
-            	<button class="btn btn-danger delete" style="margin: auto;"  data-orderid="<?php echo $ord->order_id; ?>">کنسل کردن  سفارش </button>
+            	
             </div>	
 
 
@@ -106,28 +122,7 @@ function goBack() {
 
 
 
-<script type="text/javascript">
-	$(document).ready(function(){
-     $('.delete').click(function(){
-       var order_id=$(this).data("orderid");
-       $.ajax({
-         url:"<?php echo base_url(); ?>Orders/deleteOrder",
-         data:{order_id:order_id},
-         method:"post",
-         success:function(data){
-         	window.history.back();
-         }
-         
 
-
-
-
-       });
-     });
-	});
-
-
-</script>
 
 
 <script type="text/javascript">
@@ -135,7 +130,7 @@ function goBack() {
 		$('.send').click(function(){
 			var order_id=$(this).data("orderid");
 			$.ajax({
-             url:"<?php echo base_url(); ?>Orders/sendOrder",
+             url:"<?php echo base_url(); ?>SendOrders/successSend",
              data:{order_id:order_id},
              method:"post",
              success:function(data){

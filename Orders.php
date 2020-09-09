@@ -41,6 +41,18 @@ public function deleteOrder(){
 }
 
 
+public function sendOrder(){
+	$order_id=$_POST['order_id'];
+	$data=array('order_state'=>'sending');
+	if($this->OrdersModel->sendOrder($order_id,$data)){
+		$_SSESSION['success_send']="کالا در پروسه ارسال قرار گرفته است " ;
+	}
+}
+
+
+
+
+
 
 
 

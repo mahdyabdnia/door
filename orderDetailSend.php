@@ -100,11 +100,25 @@
            
             </table>
 
-            <div >
-            	<button class="btn btn-success send" style="margin:auto;margin-left:500px; " data-orderid="<?php echo $ord->order_id; ?>">ارسال و تحویل موفق</button>
-            	<button onclick="goBack()" class="btn btn-info back" >بازگشت به صفحه قبل</button>
+           
+            	<?php $state=$ord->order_state; ?>
+             	<?php if($state=="sending"): ?>
+                  <div style="display: flex;flex-direction: row;" >
+            	<form action="<?php echo base_url(); ?>SendOrders/successSend/<?php echo $ord->order_id; ?>" method="post"><button class="btn btn-success sendsucc" name="sendsucc" style="margin:auto;margin-left:500px; " data-orderid="<?php echo $ord->order_id; ?>">ارسال و تحویل موفق</button>
+                 
+
+
+            	</form>
+
+            	<button onclick="goBack()" class="btn btn-info back"style="margin-left:80px;height: 50%;" >بازگشت به صفحه قبل</button>
+                  </div>
+            	<?php elseif($state=="sended"): ?>
+            	<div>
+            	<button onclick="goBack()" class="btn btn-info back" style="margin-left:600px;">بازگشت به صفحه قبل</button>
+                </div>
+            <?php endif; ?>
             	
-            </div>	
+           	
 
 
 
@@ -116,7 +130,7 @@
 
 <script>
 function goBack() {
-  window.history.back();
+  location.replace("<?php echo base_url(); ?>SendOrders");
 }
 </script>
 
@@ -125,22 +139,3 @@ function goBack() {
 
 
 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.send').click(function(){
-			var order_id=$(this).data("orderid");
-			$.ajax({
-             url:"<?php echo base_url(); ?>SendOrders/successSend",
-             data:{order_id:order_id},
-             method:"post",
-             success:function(data){
-             	window.history.back();
-             }
-			});
-
-		})
-	});
-
-
-
-</script>

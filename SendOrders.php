@@ -32,12 +32,20 @@ $this->load->view('layout/main',$data);
  }
 
 
- public function successSend(){
- 	$order_id=$_POST['order_id'];
- 	$data=array('order_state','sended');
- 	if($this->OrdersModel->successSend($order_id,$data)){
- 		$_SSESSION['succ']="تحویل با موفقیت صورت گرفت ";
+ public function successSend($order_id){
+        $data=array('order_state'=>'sended');
+ 	if ($_SERVER['REQUEST_METHOD']=="POST"){
+ 		if(isset($_POST['sendsucc'])){
+         
+        if($this->OrdersModel->successSend($order_id,$data)){
+ 		redirect('./SendOrders');
  	}
+
+ 		}
+ 	}
+ 	
+ 	
+ 	
  }
 
 

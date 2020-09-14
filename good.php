@@ -1,4 +1,4 @@
-        <script type="text/javascript">
+        <script type="text/javascript">     
          $(document).ready(function (){
             $('#global_type').change(function(){
                 var global_category_id=$(this).val();
@@ -11,7 +11,7 @@
                     dataType:'json',
                    async:'true',
                    success:function(data){
-                    var html='';
+                    var html='<option disabled selected hidden="" value="">لطفا یک دسته بندی را انتخاب کنید</option>';
                     var i;
                     for(i=0;i<data.length;i++){
                                      
@@ -19,7 +19,7 @@
                                       html+='<option value='+data[i].branch_category_id+'>'+data[i].branch_category+'</option>';
                                        $('#branch_type').html(html);
 
-                                
+                                  
 
 
 
@@ -44,7 +44,7 @@
                         dataType:'json',
                         async:'true',
                         success:function(data){
-                            var html='';
+                            var html='<option disabled selected hidden="" value="">لطفا یک دسته بندی را انتخاب کنید</option>';
                             var i;
                             for(i=0;i<data.length;i++){
                                 html+='<option value='+data[i].category_id+'>'+data[i].category_name+'</option>';
@@ -115,7 +115,7 @@
             </div>
             <hr>
             
-            <form  method="post" action="<?php echo base_url(); ?>Good/addGood ">
+            <form  method="post" action="<?php echo base_url(); ?>Good/addGood " enctype="multipart/form-data"  >
                 <div class="form-group">
                     <label  for="type" align="right" >دسته بندی کلی</label>
                     <select class="form-control" id="global_type" dir="rtl" name="global_category_id">
@@ -195,7 +195,7 @@
                 
                 <div class="form-group">
                 <label align="right">تصویر محصول</label>
-                    <input text-align="right" type="file" class="form-control-file border" name="img" >
+                    <input type="file" class="form-control-file border" name="good_img" >
                 
                 </div>
                 
@@ -205,9 +205,12 @@
                 </div>
                 
                 <div class="form-group btn-gr">
-                   <button class="  btn btn-info" name="save_end">ثبت و اتمام </button>
-                   <button class="btn btn-dark" name="save_next">ثبت ، کالای بعدی</button>
-                   <button class="btn btn-primary" name="cancel">انصراف</button>
+                 
+                   <input type="submit" name="save_end" class="btn btn-info form-control" value="بت و اتمام ">
+                   
+                   <input type="submit" name="save_next" class="btn btn-info form-control" value="بت ، کالای بعدی ">
+                   
+                   <input type="submit" name="cancel" class="form-control btn btn-primary" value="نصراف  ">
                 </div>
                 
                 

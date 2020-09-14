@@ -1,4 +1,4 @@
- 
+    
 
  <script type="text/javascript">
             $(document).ready(function(){
@@ -66,7 +66,7 @@
                             dataType:'json',
                             
                             success:function(data){
-                                var html='';
+                                var html='<option disabled selected hidden="" value="">لطفا یک دسته بندی را انتخاب کنید</option>';
                                 var i;
                                 for(i=0;i<data.length;i++){
                                     html+='<option value='+data[i].branch_category_id+'>'+data[i].branch_category+'</option>';
